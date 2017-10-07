@@ -30,7 +30,7 @@ namespace FiscalNet.Implementacoes.Icms
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
         }
 
@@ -38,7 +38,7 @@ namespace FiscalNet.Implementacoes.Icms
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
         }
 
