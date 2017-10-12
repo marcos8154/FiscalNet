@@ -6,8 +6,51 @@ using System.Threading.Tasks;
 
 namespace FiscalNet.Utils
 {
-    public class Util
+    public static class Util
     {
+        public static int ToCSTIPIZeus(this int cstIpi)
+        {
+            switch (cstIpi)
+            {
+                case 00: return 0;
+                case 01: return 4;
+                case 02: return 5;
+                case 03: return 6;
+                case 04: return 7;
+                case 05: return 8;
+                case 49: return 1;
+                case 50: return 2;
+                case 51: return 9;
+                case 52: return 10;
+                case 53: return 11;
+                case 54: return 12;
+                case 55: return 13;
+                case 99: return 3;
+            }
+
+            return 0;
+        }
+
+        public static int ToCSTIcmsZeus(this int cstIcms)
+        {
+            switch (cstIcms)
+            {
+                case 00: return 0;
+                case 10: return 1;
+                case 20: return 3;
+                case 30: return 4;
+                case 40: return 5;
+                case 41: return 6;
+                case 50: return 8;
+                case 51: return 9;
+                case 60: return 10;
+                case 70: return 11;
+                case 90: return 12;
+            }
+
+            return 0;
+        }
+
         public static List<KeyValuePair<int, string>> ICMS_CSOSN()
         {
             List<KeyValuePair<int, string>> result = new List<KeyValuePair<int, string>>();
@@ -128,7 +171,7 @@ namespace FiscalNet.Utils
         public static List<KeyValuePair<int, string>> OrigensProduto()
         {
             List<KeyValuePair<int, string>> result = new List<KeyValuePair<int, string>>();
-            
+
             result.Add(new KeyValuePair<int, string>(0, "0 - Nacional, exceto as indicadas nos códigos 3 a 5"));
             result.Add(new KeyValuePair<int, string>(1, "1 - Estrangeira: Importação direta, exceto a indicada no código 6"));
             result.Add(new KeyValuePair<int, string>(2, "2 - Estrangeira: Adquirida no mercado interno, exceto a indicada no código 7"));
@@ -137,7 +180,7 @@ namespace FiscalNet.Utils
             result.Add(new KeyValuePair<int, string>(5, "5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40% (quarenta por cento)"));
             result.Add(new KeyValuePair<int, string>(6, "6 - Estrangeira: Importação direta, sem similar nacional, constante em lista de Resolução CAMEX"));
             result.Add(new KeyValuePair<int, string>(7, "7 - Estrangeira: Adquirida no mercado interno, sem similar nacional, constante em lista de Resolução CAMEX"));
-            
+
             return result;
         }
     }
